@@ -5,8 +5,6 @@ import axios from "axios";
 const API_KEY="7d99846d71909cece46984e3b3e5414d"
 const BASE_URL = "https://gnews.io/api/v4/top-headlines";
 
-// `https://gnews.io/api/v4/top-headlines?category=general&apikey=7d99846d71909cece46984e3b3e5414d`
-
 
 const useArticle = create((set)=>({
     articles:[],

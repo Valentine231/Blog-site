@@ -19,13 +19,14 @@ const Searchbar = () => {
         fetchArticle(category, searchTerm)
     }
   return (
-   <>
+   <div className='flex flex-row gap-[17rem] items-center justify-center'>
+
    {/* Category Filter */}
    <div className="mb-4 flex gap-2">
    {["general", "technology", "sports", "business", "entertainment"].map((cat) => (
      <button
        key={cat}
-       className={`px-4 py-2 rounded-md ${
+       className={`px-4 py-2  rounded-md  ${
          category === cat ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-800"
        }`}
        onClick={() => handleCategoryChange(cat)}
@@ -40,7 +41,7 @@ const Searchbar = () => {
      <input
        type="text"
        placeholder="Search articles..."
-       className="border p-2 w-full rounded-md"
+       className="border p-2 w-40 rounded-md"
        value={searchTerm}
        onChange={(e) => setSearchTerm(e.target.value)}
      />
@@ -48,7 +49,7 @@ const Searchbar = () => {
        Search
      </button>
    </form>
-   </>
+   </div>
   
   )
 }
