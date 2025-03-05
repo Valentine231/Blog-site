@@ -26,7 +26,7 @@ const Searchbar = () => {
         {["general", "technology", "sports", "business", "entertainment"].map((cat) => (
           <button
             key={cat}
-            className={`px-4 py-2 rounded-md transition ${
+            className={`px-4 py-2 rounded-md pointer-cusor transition ${
               category === cat ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-800"
             }`}
             onClick={() => handleCategoryChange(cat)}

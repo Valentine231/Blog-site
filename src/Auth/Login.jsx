@@ -4,9 +4,8 @@ import useAuth from '../Store/Auth';
 import { useNavigate } from 'react-router-dom';
 import { ClipLoader } from 'react-spinners';
 
-
 const Login = () => {
-  const { login,Error,Loading } = useAuth();
+  const { login, Error, Loading } = useAuth();
   const navigate = useNavigate();
 
   const [email, setEmail] = useState('');
@@ -14,10 +13,9 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    login(email, password);
+    await login(email, password);
     navigate('/');
-  }
-
+  };
 
   return (
     <div className="bg-blue-400 w-full min-h-screen flex items-center justify-center px-4">
@@ -38,7 +36,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             className="p-3 focus-visible:outline-purple-300 rounded-lg w-full max-w-xs bg-gray-100"
           />
-          <button type='submit' className="bg-purple-500 hover:bg-purple-600 text-white rounded-lg p-2 w-full max-w-xs">
+          <button type="submit" className="bg-purple-500 hover:bg-purple-600 text-white rounded-lg p-2 w-full max-w-xs">
             {Loading ? <ClipLoader color="#fff" size={20} /> : 'Login'}
           </button>
 
