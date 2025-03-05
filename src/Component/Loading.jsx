@@ -16,7 +16,7 @@ const Loading = () => {
         }}
          transition={{duration: 0.7, repeat: Infinity, ease: 'easeInOut', delay:i*0.2}}
          >
-          
+           
          </motion.div>
         ))}
        
