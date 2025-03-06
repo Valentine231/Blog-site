@@ -1,7 +1,7 @@
-
+import { supabase } from "../Service/SupaBase";
 
 export const Fetch = async (articleID) => {
-    const {data,error} = await Supabase
+    const {data,error} = await supabase
     .from ('comments')
     .select('*')
     .eq('article_ID', articleID)
@@ -15,10 +15,10 @@ export const Fetch = async (articleID) => {
 
 
 export const Addcomment = async (articleID,userId,content) =>{
-    const {data,error} = await Supabase.from('comment').insert([{
+    const {data,error} = await supabase.from('comment').insert([{
         articleID:articleID,
         userId:userId,
-        content,
+        content:content,
     }])
 
     if(error){
