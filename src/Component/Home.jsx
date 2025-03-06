@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import {supabase} from "../Service/SupaBase"
 import {motion} from "framer-motion"
 import useArticle from "../Store/Store";
 import Comment from "./Comment";
@@ -10,19 +10,20 @@ import Loading from "./Loading";
 
 const Home = () => {
     const { articles, fetchArticle, loading, error } = useArticle();
+    const [user, setUser] = useState(null);
   
 
-    // useEffect(() => {
-    //     fetchArticle();
+    useEffect(() => {
+        fetchArticle();
 
-    //     // Fetch authenticated user
-    //     const fetchUser = async () => {
-    //         const { data: { user } } = await supabase.auth.getUser();
-    //         setUser(user);
-    //     };
+        // Fetch authenticated user
+        const fetchUser = async () => {
+            const { data: { user } } = await supabase.auth.getUser();
+            setUser(user);
+        };
 
-    //     fetchUser();
-    // }, []);
+        fetchUser();
+    }, []);
 
     return (
         
@@ -54,17 +55,14 @@ const Home = () => {
           
           </div>
           
-{/*            
-           {user?(
-            <section>
-            <Comment articleID={articles.Id} />
-            <Commentform articleID={articles.Id} userId={user} />
-        </section>
-           ):(
+           
+          {user && articles.map((article) => (
+  <section key={article.id}>
+    <Comment articleID={article.id} />
+    <Commentform articleID={article.id} userId={user.id} />
+  </section>
+))}
 
-           null 
-           )      
-          } */}
            
          
 
