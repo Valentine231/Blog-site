@@ -14,11 +14,11 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await login(email, password);
-    navigate('/');
+    navigate('/home');
   };
 
   return (
-    <div className="bg-blue-400 w-full min-h-screen flex items-center justify-center px-4">
+    <div className="bg-teal-400 w-full min-h-screen flex items-center justify-center px-4">
       <div className="flex flex-col items-center justify-center bg-white shadow-lg rounded-lg w-full max-w-sm p-6">
         <form onSubmit={handleSubmit} className="flex flex-col items-center w-full gap-4">
           <h2 className="text-2xl font-semibold">Login</h2>

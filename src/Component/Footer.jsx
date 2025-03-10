@@ -9,7 +9,7 @@ const Footer = () => {
         
         {/* Logo / Branding */}
         <div className="mb-4 md:mb-0">
-          <h2 className="text-xl font-semibold text-white">Newtime blog</h2>
+          <h2 className="text-xl font-semibold text-white">TimeBl⏲g</h2>
           <p className="text-sm text-gray-400">Stay updated with the latest trends.</p>
         </div>
 
