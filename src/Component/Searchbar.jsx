@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useArticle from '../Store/Store';
+import { FaSearch } from 'react-icons/fa';
 
 const Searchbar = () => {
   const { category, searchquery, fetchArticle } = useArticle();
@@ -26,7 +27,7 @@ const Searchbar = () => {
         {["general", "technology", "sports", "business", "entertainment"].map((cat) => (
           <button
             key={cat}
-            className={`px-4 py-2 rounded-md pointer-cusor transition ${
+            className={`px-4 py-2 rounded-md cursor-pointer transition ${
               category === cat ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-800"
             }`}
             onClick={() => handleCategoryChange(cat)}
@@ -37,16 +38,16 @@ const Searchbar = () => {
       </div>
 
       {/* Search Bar */}
-      <form onSubmit={handleSearch} className="flex gap-2 w-full md:w-auto">
+      <form onSubmit={handleSearch} className="flex gap-2 w-full md:w-auto relative">
         <input
           type="text"
           placeholder="Search articles..."
-          className="border p-2 w-full sm:w-40 rounded-md"
+          className="border p-2 w-full sm:w-40 rounded-md pr-10" // Add padding to the right for the icon
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md">
-          Search
+        <button type="submit" className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-3 py-2 rounded-md flex items-center">
+          <FaSearch />
         </button>
       </form>
       
