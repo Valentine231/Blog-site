@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FiClock } from 'react-icons/fi';
 
 const LandingPage = () => {
   return (
@@ -12,16 +13,35 @@ const LandingPage = () => {
 
       {/* Hero Section */}
       <main className="flex-1 flex flex-col items-center justify-center text-center p-6">
-        <h1 className="text-3xl md:text-4xl font-extrabold text-teal-400 mb-4">Welcome to Our Platform</h1>
-        <p className="text-gray-700 max-w-md px-4">
-          Discover amazing features and enhance your experience with us.
-        </p>
-        <Link to="/login" className="mt-6">
-          <button 
-            className="px-6 py-2 bg-teal-400 text-white rounded-lg shadow-md hover:bg-teal-500 transition">
-            Get Started
-          </button>
-        </Link>
+       
+        <div className='container mx-auto px-4'>
+                <div className='text-center'>
+                    <h1 className='text-4xl md:text-6xl font-bold'>
+                        Welcome to 
+                        <span className='text-teal-600 inline-flex items-center ml-2'>
+                            TIMEBL<FiClock className='text-black' />G
+                        </span>
+                    </h1>
+                    <p className='text-lg text-gray-600 mt-4'>
+                        "Breaking News, Sports Thrills, Business Insights, and the Best in Music & Movies – All in One Place!"
+                    </p>
+                </div>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-10'>
+                    <img src='https://img.freepik.com/premium-photo/cartoon-film-camera-white-background-3d-rendering_778569-6967.jpg' className='w-full rounded-lg shadow-lg' alt='Movies' />
+                    <img src='https://img.freepik.com/free-vector/box-full-sport-equipments_1308-37207.jpg' className='w-object-cover rounded-lg shadow-lg' alt='Sports' />
+                    <img src='https://img.freepik.com/free-vector/headphone-white-background_1308-21636.jpg' className='w-full rounded-lg shadow-lg' alt='Music' />
+                </div>
+                <div className='text-center mt-10'>
+                <Link to="/login" className="mt-6">
+                    <button 
+                        className='bg-teal-600 text-white px-6 py-3 rounded-full font-bold hover:shadow-xl'
+                        
+                    >
+                        Explore Our Blog
+                    </button>
+                    </Link>
+                </div>
+            </div>
       </main>
     </div>
   );
