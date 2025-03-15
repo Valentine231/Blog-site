@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
+import Searchbar from "./Searchbar";
+import Caterogies from "./Caterogies";
+import Logo from "./Logo";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,6 +14,7 @@ const Navbar = () => {
   return (
     <div className="bg-teal-600 w-full py-4 px-6 relative">
       <nav className="flex items-center justify-between">
+        <Logo />
         {/* Mobile Menu Button */}
         <button
           className="md:hidden text-white text-2xl z-50"
@@ -50,6 +54,7 @@ const Navbar = () => {
                 About
               </NavLink>
             </li>
+            <Caterogies />
           </ul>
         </div>
 
@@ -79,7 +84,10 @@ const Navbar = () => {
               About
             </NavLink>
           </li>
+          <Caterogies />
         </ul>
+
+      
       </nav>
     </div>
   );

@@ -10,9 +10,9 @@ const Searchbar = () => {
     fetchArticle(category, searchquery);
   }, [category, searchquery]);
 
-  const handleCategoryChange = (newCategory) => {
-    fetchArticle(newCategory, searchquery);
-  };
+  // const handleCategoryChange = (newCategory) => {
+  //   fetchArticle(newCategory, searchquery);
+  // };
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -20,25 +20,9 @@ const Searchbar = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center gap-4 p-4 w-full">
+    <div className="flex flex-col-1  md:flex-row items-center justify-center gap-4 p-4 w-full">
       {/* Category Filter */}
-      <div className="flex flex-wrap gap-2 justify-center md:justify-start w-full md:w-auto">
-        {["general", "technology", "sports", "business", "entertainment"].map(
-          (cat) => (
-            <button
-              key={cat}
-              className={`px-4 py-2 text-sm md:text-base rounded-md cursor-pointer transition ${
-                category === cat
-                  ? "bg-blue-500 text-white"
-                  : "bg-gray-200 text-gray-800"
-              }`}
-              onClick={() => handleCategoryChange(cat)}
-            >
-              {cat.charAt(0).toUpperCase() + cat.slice(1)}
-            </button>
-          )
-        )}
-      </div>
+     
 
       {/* Search Bar */}
       <form

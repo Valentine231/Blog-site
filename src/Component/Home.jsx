@@ -7,6 +7,7 @@ import Loading from "./Loading";
 import Websocket from "./Websocket";
 import Searchbar from "./Searchbar";
 
+
 const Home = () => {
     const { articles, fetchArticle, loading, error } = useArticle();
 
@@ -15,7 +16,8 @@ const Home = () => {
             <Navbar />
 
             <div className="max-w-6xl mx-auto p-4 sm:p-6">
-            <Searchbar />
+                <Searchbar />
+         
                 <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Latest News</h1>
                 {loading && <Loading />}
                 {error && <p className="text-red-500">{error}</p>}
