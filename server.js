@@ -16,7 +16,7 @@ const io = new SocketServer(server, {
 
 // Enable CORS for all origins
 app.use(cors({
-    origin: 'http://localhost:5173', // Allow requests from this origin
+    origin: "https://your-vercel-app.vercel.app", // Allow requests from this origin 'http://localhost:5173'
     methods: ['GET', 'POST'], // Specify allowed methods
     credentials: true // Allow credentials if needed
 }));
